@@ -1,4 +1,4 @@
-# orachestrator-workflow-knative-monitoring-demo
+# sonataflow-knative-monitoring-demo
 A quick demo for SonataFlow, Knative and Monitoring integration
 
 ## Deploy PostgreSQL Server 
