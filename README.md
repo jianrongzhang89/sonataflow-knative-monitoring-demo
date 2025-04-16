@@ -10,7 +10,7 @@ cd orchestrator-helm-chart/postgresql
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install sonataflow-psql bitnami/postgresql --version 12.x.x -f ./values.yaml
 ```
-Note that the namse of the secret and the keys must match the ones used in the SonataFlowPlatform and workflow definition.
+Note that the names of the secret and keys must match the ones used in the SonataFlowPlatform and workflow definition.
 
 ## Deploy Orchestrator Operator from OpenShift OperatorHub
 ## Create Orchestrator CR in sonataflow-infra namespace:
@@ -28,6 +28,13 @@ Check and confirm that the dataindex and job service pods are running.
 
 ## Deploy and configure Promtheus and Grafana
 Follow the instructions at https://sonataflow.org/serverlessworkflow/latest/cloud/operator/monitoring-workflows.html to deploy and configure Promtheus and Grafana.
+
+In order to access the Prometheus UI, first run the command
+```
+oc port-forward -n openshift-user-workload-monitoring pod/prometheus-user-workload-0 9090
+```
+and then use URL `http://localhost:9090/graph` in a web browser to open the Prometheus UI. 
+
 ## Verify the Grafana DataSource connection
 ## Import the sample Grafana dashboard
 ## Deploy the sample workflows
