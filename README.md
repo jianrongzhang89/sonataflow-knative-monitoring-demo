@@ -38,6 +38,11 @@ and then use URL `http://localhost:9090/graph` in a web browser to open the Prom
 ## Verify the Grafana DataSource connection
 ## Import the sample Grafana dashboard
 ## Deploy the sample workflows
+First deploy the configmap used by the callbacktimeouts workflow.
+```
+sonataflow_callbackstatetimeouts-props.sw.yaml
+```
+Then deploy the workflows for the demo.
 ```
     oc apply -f sonataflow_eventstatetimeouts.sw.yaml
     oc apply -f sonataflow_greeting.yaml
